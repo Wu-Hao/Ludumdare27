@@ -250,7 +250,7 @@ var AirConditoin = cc.Class.extend({
 
         var flag = false;
 
-        if(this.arrJoin && this.arrJoin.getImpulse() > 6000){
+        if(this.arrJoin && this.arrJoin.getImpulse() > 7000){
             //console.log("air conditoin. 1", this.arrJoins[i].getImpulse());
             //this.arrJoints[i].a.shape.group = 0;
             space.removeConstraint(this.arrJoin);
@@ -260,7 +260,7 @@ var AirConditoin = cc.Class.extend({
             flag=true;
         }
 
-        if(this.arrJoin2 && this.arrJoin2.getImpulse() > 6000){
+        if(this.arrJoin2 && this.arrJoin2.getImpulse() > 7000){
             //console.log("air conditoin. 1", this.arrJoins[i].getImpulse());
             //this.arrJoints[i].a.shape.group = 0;
             space.removeConstraint(this.arrJoin2);

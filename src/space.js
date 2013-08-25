@@ -7,7 +7,6 @@ function resetSpace(){
     goldScore = 0;
     timeScore = 0;
     aircCrash = 0;
-    startTime = null;
 
     space = new cp.Space();
     space.iterations = 20;

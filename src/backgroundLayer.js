@@ -56,14 +56,3 @@ var BackGroundLayer = cc.Layer.extend({
         this.backBuildsBatch.addChild(build);
     }
 });
-
-var FrontLayer = cc.Layer.extend({
-
-    init:function(){
-        this._super();
-
-        var scroll = new cc.Sprite.create(s_scroll);
-        scroll.setPosition(cc.p(580,700));
-        this.addChild(scroll);
-    }
-});

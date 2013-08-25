@@ -345,13 +345,13 @@ var getRandAirPos = function(){
 var getAirRandom = function(){
     var num;
     var rand = getRandom(100);
-    if(rand<50){
+    if(rand<70){
         num = 0;
     }
-    else if(rand<75){
+    else if(rand<90){
         num = 1;
     }
-    else if(rand<90){
+    else if(rand<95){
         num = 2;
     }
     else{
