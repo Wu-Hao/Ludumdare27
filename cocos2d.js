@@ -46,6 +46,7 @@
             'src/GrossiniLayer.js',
             'src/FrontLayer.js',
             'src/optionsLayer.js',
+            'src/ScoreLayer.js',
             'src/myApp.js'//add your own files in order here
         ]
     };

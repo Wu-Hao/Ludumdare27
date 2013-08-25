@@ -57,7 +57,6 @@ var FrontLayer = cc.Layer.extend({
         MainMenu.setPosition(cc.p(500,50));
         this.addChild(MainMenu, 5);
 
-
         //retryBtn.setVisible(false);
         //var subMenu = cc.Menu.create(this.submitBtn);
         //this.addChild(subMenu);
@@ -79,9 +78,8 @@ var FrontLayer = cc.Layer.extend({
         if(maiMenuFlag ==false){
 
             var nowTime = new Date();
-            timeScore =  (nowTime.getTime() - startTime.getTime())/1000
-
-            this.timeLabel.setString(timeScore.toString().substring(0,timeScore.toString().length-4) + "s");
+            timeScore =  0|((nowTime.getTime() - startTime.getTime())/1000);
+            this.timeLabel.setString(timeScore + "s");
         }
     },
 

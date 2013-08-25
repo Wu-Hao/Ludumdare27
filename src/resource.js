@@ -40,13 +40,21 @@ var s_slider_thumb     = "res/extensions/sliderThumb.png";
 var s_HelloWorld       = "res/Pic/HelloWorld.png";
 var s_CloseNormal      = "res/Pic/CloseNormal.png";
 var s_CloseSelected    = "res/Pic/CloseSelected.png";
+var s_title            = "res/Pic/title.png";
 var m_submit           = "res/Pic/submit.png";
 var m_submitPush       = "res/Pic/submitPush.png";
 var m_retry            = "res/Pic/retry.png";
 var m_retryPush        = "res/Pic/retryPush.png";
+var s_extensions_button = "res/extensions/button.png";
+var s_extensions_buttonBackground = "res/extensions/buttonBackground.png";
+var s_extensions_buttonHighlighted = "res/extensions/buttonHighlighted.png";
 
 var g_resources = [
     //image
+    {src:s_extensions_button},
+    {src:s_extensions_buttonBackground},
+    {src:s_extensions_buttonHighlighted},
+
     {src:s_slider_track},
     {src:s_slider_progress},
     {src:s_slider_thumb},
@@ -55,6 +63,7 @@ var g_resources = [
     {src:s_switch_on},
     {src:s_switch_off},
     {src:s_switch_thumb},
+    {src:s_title},
 
     {src:s_HelloWorld},
     {src:s_CloseNormal},

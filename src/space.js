@@ -7,6 +7,7 @@ function resetSpace(){
     goldScore = 0;
     timeScore = 0;
     aircCrash = 0;
+    startTime = null;
 
     space = new cp.Space();
     space.iterations = 20;
@@ -119,76 +120,7 @@ function resetSpace(){
 
         return true;
     }, function(a,b,c){
-
-        space.endTime = Date.now();
-        var totalTime = (space.endTime - space.startTime)/1000;
-        console.log("time till body touch ground is ", totalTime);
-        var finalMenu = cc.Sprite.create(b_menu);
-
-        var sequenceInit = cc.Sequence.create(cc.CallFunc.create(function(){
-
-                                               if(maiMenuFlag ==false){
-                                                 frontLayer.timeLabel.setVisible(false);
-                                                 this.musicEngine = cc.AudioEngine.getInstance();
-                                                 this.musicEngine.playEffect(v_hitFloor);
-                                                 BUILDING_LAYER.setKeyState(false);
-                                               }
-                                             }),cc.DelayTime.create(4)
-                                             ,cc.CallFunc.create(function(){
-
-                                              if(maiMenuFlag ==false){
-
-                                                  var goldLabel = cc.LabelTTF.create("$$$$ : "+goldScore, "Arial", 20);
-                                                  goldLabel.setColor(cc.yellow());
-
-                                                  var timeScoreLabel = cc.LabelTTF.create("Time : "+ totalTime + "S", "Arial", 20);
-                                                  timeScoreLabel.setColor(cc.yellow());
-
-                                                  var headGScoreLabel = cc.LabelTTF.create("HeadG : "+ (0|space.max_head_g) , "Arial", 20);
-                                                  headGScoreLabel.setColor(cc.yellow());
-
-                                                  var bodyGScoreLabel = cc.LabelTTF.create("BodyG : "+ (0|space.max_body_g) , "Arial", 20);
-                                                  bodyGScoreLabel.setColor(cc.yellow());
-
-                                                  var aircCrashLabel = cc.LabelTTF.create("AirCons : "+ aircCrash , "Arial", 20);
-                                                  aircCrashLabel.setColor(cc.yellow());
-
-                                                  var finalMenu = cc.Sprite.create(b_menu);
-                                                  frontLayer.addChild(finalMenu);
-                                                  finalMenu.setPosition(cc.p(300, 400))
-                                                  finalMenu.setOpacity(205);
-
-                                                  goldLabel.setPosition(cc.p(300, 550));
-                                                  frontLayer.addChild(goldLabel);
-
-                                                  timeScoreLabel.setPosition(cc.p(300, 520));
-                                                  frontLayer.addChild(timeScoreLabel);
-
-                                                  headGScoreLabel.setPosition(cc.p(300, 490));
-                                                  frontLayer.addChild(headGScoreLabel);
-
-                                                  bodyGScoreLabel.setPosition(cc.p(300, 460));
-                                                  frontLayer.addChild(bodyGScoreLabel);
-
-                                                  aircCrashLabel.setPosition(cc.p(300, 430));
-                                                  frontLayer.addChild(aircCrashLabel);
-
-
-                                                  var submit = cc.Sprite.create(m_submit);
-                                                  var submitPush = cc.Sprite.create(m_submitPush);
-                                                  var submitBtn = cc.MenuItemSprite.create(submit, submitPush, submitScore, this);
-                                                  submit.setOpacity(200);
-                                                  submitPush.setOpacity(200);
-
-                                                  maiMenuFlag = true;
-                                                  var submitMenu = cc.Menu.create(submitBtn);
-                                                  submitMenu.setAnchorPoint(cc.p(0,0));
-                                                  submitMenu.setPosition(cc.p(300,350));
-                                                  frontLayer.addChild(submitMenu, 5);
-                                              }
-
-                                          },this));
-        frontLayer.runAction(sequenceInit);
+        endGame();
 
         return true;
     });

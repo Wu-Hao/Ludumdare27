@@ -50,6 +50,10 @@ var MenuLayer = cc.Layer.extend({
         backPic.setAnchorPoint(cc.p(0,0));
         this.addChild(backPic, p_MapZOder.bg);
 
+        var titlePic = cc.Sprite.create(s_title);
+        titlePic.setPosition(cc.p(300,700));
+        this.addChild(titlePic, 1);
+
         //create startBtn
         var start     = cc.Sprite.create(m_start);
         var startPush = cc.Sprite.create(m_startPush);
@@ -108,6 +112,11 @@ var MenuLayer = cc.Layer.extend({
 
     leaderBoardView:function(){
         this.musicEngine.playEffect(v_buttonPush);
+        resetSpace();
+        var scene = new cc.Scene.create();
+        scene.addChild(new ScoreLayer);
+        var optionsTransition = cc.TransitionMoveInR.create(0.5,scene);
+        cc.Director.getInstance().replaceScene(optionsTransition);
     }
 });
 
