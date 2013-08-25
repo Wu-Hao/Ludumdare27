@@ -191,6 +191,11 @@ function submitScore(){
     if(name)
     {
         sendScore(name,goldScore, space.max_head_g, space.max_body_g, aircCrash, timeScore);
+        resetSpace();
+        var scene = new cc.Scene.create();
+        scene.addChild(new ScoreLayer);
+        var optionsTransition = cc.TransitionMoveInR.create(0.5,scene);
+        cc.Director.getInstance().replaceScene(optionsTransition);
     }
 }
 
